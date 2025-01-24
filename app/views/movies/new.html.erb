@@ -1,20 +1,3 @@
 <h1>Create a new Movie</h1>
 
-<%= form_with(model: @movie) do |form| %>
-  <%= form.label :name %>
-  <%= form.text_field :name %>
-
-  <%= form.label :description %>
-  <%= form.text_area :description, rows: 7 %>
-
-  <%= form.label :rating %>
-  <%= form.text_field :rating %>
-
-  <%= form.label :released_on %>
-  <%= form.date_select :released_on, {}, {class: "date"} %>
-
-  <%= form.label :total_gross %>
-  <%= form.number_field :total_gross %>
-
-  <%= form.submit %>
-<% end %>
+<%= render "form", movie: @movie %>
