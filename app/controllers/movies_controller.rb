@@ -41,7 +41,10 @@ class MoviesController < ApplicationController
         :description,
         :rating,
         :released_on,
-        :total_gross
+        :total_gross,
+        :director,
+        :duration,
+        :image_file_name
       )
     end
 end
