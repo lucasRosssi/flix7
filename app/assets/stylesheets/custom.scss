@@ -539,6 +539,11 @@ form:not([class="button_to"]) {
   }
 
   &.alert {
+    background-color: #ffe789;
+    border: 1px solid #FFA715
+  }
+
+  &.warning {
     @extend .alert-danger;
   }
 }
