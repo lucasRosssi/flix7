@@ -1,17 +1,30 @@
 <h1>Reviews for <%= link_to @movie.name, @movie %></h1>
-<ul class="reviews">
+<ul
+  class="reviews"
+>
   <% @reviews.each do |review| %>
-    <li>
-      <%= render "shared/stars", percent: review.stars_as_percent %>
-      <p>
-        <%= review.name %>
-        <span class="date">
-          <%= time_ago_in_words(review.created_at) %> ago
-        </span>
-      </p>
-      <p>
+    <li 
+      style="
+        background-color:rgb(226, 234, 235);
+        border: 1px solid rgb(194, 224, 236);
+        border-radius: 0 20px 20px 20px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+      "
+    >
+      <div style="display: flex; align-items: center;">
+        <p style="margin: 0;">
+          <strong><%= review.name %></strong>
+        </p>
+        <%= render "shared/stars", percent: review.stars_as_percent %>
+      </div>
+      <p style="margin-top: 10px; margin-bottom: 0; font-size: 16px;"> 
         <%= review.comment %>
       </p>
+      <span class="date" style="align-self: flex-end; font-size: 12px;">
+        <%= time_ago_in_words(review.created_at) %> ago
+      </span>
     </li>
   <% end %>
 </ul>
