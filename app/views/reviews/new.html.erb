@@ -1,0 +1,21 @@
+<h1>New Review for <%= link_to @movie.name, @movie %></h1>
+
+<%= form_with(model: [@movie, @review]) do |form| %>
+  <%= render "shared/errors", object: @review %>
+
+  <%= form.label :name %>
+  <%= form.text_field :name, autofocus: true %>
+
+  <div class="legend">Stars</div>
+  <% Review::STARS.each do |star| %>
+    <span class="star">
+      <%= form.radio_button :stars, star %>
+      <%= form.label :stars, star, value: star %>
+    </span>
+  <% end %>
+
+  <%= form.label :comment %>
+  <%= form.text_area :comment, placeholder: "What did you think?" %>
+
+  <%= form.submit "Post Review" %>
+<% end %>
