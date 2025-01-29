@@ -2,6 +2,8 @@ class Movie < ApplicationRecord
   FLOP_THRESHOLD = 400_000_000
   RATINGS = %w(G PG PG-13 R NC-17)
 
+  has_many :reviews, dependent: :destroy
+
   validates :name, :released_on, :duration, presence: true
   validates :description, length: { minimum: 20 }
   validates :total_gross, numericality: { greater_than_or_equal_to: 0 }
