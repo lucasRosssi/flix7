@@ -7,12 +7,26 @@
       </li>
     </ul>
     <ul class="right">
-      <li>
-        <%= link_to "Sign In", signin_path, class: "button" %>
-      </li>
-      <li>
-        <%= link_to "Sign Up", signup_path, class: "button" %>
-      </li>
+      <% if current_user %>
+        <% unless params[:controller] == 'users' 
+          && params[:id]
+          && Integer(params[:id]) == current_user.id 
+        %>
+          <li>
+            <%= link_to current_user.name, current_user %>
+          </li>
+          <li>
+            <%= link_to "My Account", edit_user_path(current_user) %>
+          </li>
+        <% end %>
+      <% else %>
+        <li>
+          <%= link_to "Sign In", new_session_path, class: "button" %>
+        </li>
+        <li>
+          <%= link_to "Sign Up", signup_path, class: "button" %>
+        </li>
+      <% end %>
     </ul>
   </nav>
 </header>
