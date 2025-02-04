@@ -1,0 +1,17 @@
+<section class="user">
+  <div style="display: flex; align-items: center;">
+    <div style="border-radius: 999px; overflow: hidden; width: fit-content; height: fit-content; margin-right: 10px;">
+      <%= profile_image(@user) %>
+    </div>
+    <div>
+      <h1><%= @user.name %></h1>
+      <h2><%= mail_to(@user.email) %></h2>
+    </div>
+  </div>
+  <h3>
+    Member Since: 
+  </h3>
+  <p>
+    <%= @user.created_at.strftime("%B %Y") %>
+  </p>
+</section>
