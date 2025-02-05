@@ -8,14 +8,16 @@
       <h2><%= @user.name %></h2>
       <h2><%= mail_to(@user.email) %></h2>
     </div>
-    <div class="actions" style="flex: 1; display: flex; justify-content: flex-end; gap: 20px;">
-      <%= link_to "Edit Account", edit_user_path(@user), class: "button edit" %>
-      <%= link_to "Delete Account",
-        @user,
-        data: { turbo_method: :delete, turbo_confirm: "Are you really sure? This action can't be reverted." },
-        class: "button delete" 
-      %>
-    </div>
+    <% if current_user?(@user) %>
+      <div class="actions" style="flex: 1; display: flex; justify-content: flex-end; gap: 20px;">
+        <%= link_to "Edit Account", edit_user_path(@user), class: "button edit" %>
+        <%= link_to "Delete Account",
+          @user,
+          data: { turbo_method: :delete, turbo_confirm: "Are you really sure? This action can't be reverted." },
+          class: "button delete" 
+        %>
+      </div>
+    <% end %>
   </div>
   <h3>
     Member Since: 
