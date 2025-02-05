@@ -1,7 +1,8 @@
-<section class="admin">
+<% if current_user_admin? %>
+  <section class="admin">
     <%= link_to "Add New Movie", new_movie_path, class: "button" %>
-</section>
-
+  </section>
+<% end %>
 <% @movies.each do |movie| %>
   <section class="movie">
     <div class="image">
