@@ -14,8 +14,11 @@
       "
     >
       <div style="display: flex; align-items: center;">
-        <p style="margin: 0;">
-          <strong><%= review.name %></strong>
+        <div style="border-radius: 999px; overflow: hidden; width: fit-content; height: fit-content;">
+          <%= profile_image(review.user, 35) %> 
+        </div>
+        <p style="margin: 0 0 0 5px;">
+          <strong><%= link_to review.user.name, review.user %></strong>
         </p>
         <%= render "shared/stars", percent: review.stars_as_percent %>
       </div>
