@@ -1,0 +1,8 @@
+<li style="
+  display: flex;
+  align-items: center;
+  gap: 10px;
+">
+  <%= render "users/picture", user: user, size: size ||= 30 %>
+  <%= link_to user.username, user %>
+</li>
