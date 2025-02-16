@@ -35,10 +35,9 @@ class MoviesController < ApplicationController
 
   def new
     @movie = Movie.new
-    @selected_genre = Genre.find(params[:selected_genre])
 
-    if @selected_genre
-      @movie.genre_ids = [@selected_genre.id]
+    if params[:selected_genre]
+      @movie.genre_ids = [params[:selected_genre]]
     end
   end
 
