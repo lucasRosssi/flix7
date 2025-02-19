@@ -21,7 +21,6 @@ class Movie < ApplicationRecord
 
   scope :released, -> { where("released_on <= ?", Time.now).order("released_on desc") }
   scope :upcoming, -> { where("released_on > ?", Time.now).order("released_on asc") }
-  scope :last_releases, ->(max=5) { released.limit(max) }
   scope :recent, -> { where("released_on BETWEEN ? AND ?", Time.now-1.month, Time.now) }
   scope :hits, -> { released.where("total_gross >= ?", HIT_THRESHOLD).order(total_gross: :desc) }
   scope :flops, -> { released.where("total_gross < ?", FLOP_THRESHOLD).order(total_gross: :asc) }
