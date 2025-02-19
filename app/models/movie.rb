@@ -1,5 +1,6 @@
 class Movie < ApplicationRecord
-  FLOP_THRESHOLD = 400_000_000
+  HIT_THRESHOLD = 600_000_000
+  FLOP_THRESHOLD = 300_000_000
   RATINGS = %w(G PG PG-13 R NC-17)
 
   has_many :reviews, dependent: :destroy
@@ -18,21 +19,12 @@ class Movie < ApplicationRecord
     message: "must be a JPG or PNG image"
   }
 
-  def self.released
-    where("released_on <= ?", Time.now).order("released_on desc")
-  end
-
-  def self.upcoming
-    where("released_on > ?", Time.now).order("released_on asc")
-  end
-
-  def self.flopped
-    where("total_gross < ?", FLOP_THRESHOLD)
-  end
-
-  def self.succeeded
-    where("total_gross >= ?", FLOP_THRESHOLD)
-  end
+  scope :released, -> { where("released_on <= ?", Time.now).order("released_on desc") }
+  scope :upcoming, -> { where("released_on > ?", Time.now).order("released_on asc") }
+  scope :last_releases, ->(max=5) { released.limit(max) }
+  scope :recent, -> { where("released_on BETWEEN ? AND ?", Time.now-1.month, Time.now) }
+  scope :hits, -> { released.where("total_gross >= ?", HIT_THRESHOLD).order(total_gross: :desc) }
+  scope :flops, -> { released.where("total_gross < ?", FLOP_THRESHOLD).order(total_gross: :asc) }
 
   def flop?
     unless (reviews.count > 50 && average_stars >= 4)
@@ -40,8 +32,8 @@ class Movie < ApplicationRecord
     end
   end
 
-  def success?
-    total_gross >= FLOP_THRESHOLD || (reviews.count > 50 && average_stars >= 4)
+  def hit?
+    total_gross >= HIT_THRESHOLD || (reviews.count > 50 && average_stars >= 4)
   end
 
   def average_stars
