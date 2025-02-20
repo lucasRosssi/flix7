@@ -20,7 +20,6 @@ Movie.create!([
     total_gross: 1_223_641_414,
     director: 'Anthony Russo',
     duration: '181 min',
-    image_file_name: 'avengers-end-game.png',
     slug: 'avengers-endgame'
   },
   {
@@ -34,7 +33,6 @@ Movie.create!([
     total_gross: 1_110_662_849,
     director: 'Anna Boden',
     duration: '124 min',
-    image_file_name: 'captain-marvel.png',
     slug: 'captain-marvel'
   },
   {
@@ -48,7 +46,6 @@ Movie.create!([
     total_gross: 1_346_913_161,
     director: 'Ryan Coogler',
     duration: '134 min',
-    image_file_name: 'black-panther.png',
     slug: 'black-panther'
   },
   {
@@ -62,7 +59,6 @@ Movie.create!([
     total_gross: 2_048_359_754,
     director: 'Anthony Russo',
     duration: '149 min',
-    image_file_name: 'avengers-infinity-war.png',
     slug: 'avengers-infinity-war'
   },
   {
@@ -76,7 +72,6 @@ Movie.create!([
     total_gross: 219_851_172,
     director: 'Martin Campbell',
     duration: '114 min',
-    image_file_name: 'green-lantern.png',
     slug: 'green-lantern'
   },
   {
@@ -90,7 +85,6 @@ Movie.create!([
     total_gross: 168_257_860,
     director: 'Josh Trank',
     duration: '100 min',
-    image_file_name: 'fantastic-four.png',
     slug: 'fantastic-four'
   },
   {
@@ -106,7 +100,6 @@ Movie.create!([
     total_gross: 585_366_247,
     director: 'Jon Favreau',
     duration: '126 min',
-    image_file_name: 'ironman.png',
     slug: 'iron-man'
   },
   {
@@ -122,7 +115,6 @@ Movie.create!([
     total_gross: 300_451_603,
     director: 'Richard Donner',
     duration: '143 min',
-    image_file_name: 'superman.png',
     slug: 'superman'
   },
   {
@@ -139,7 +131,6 @@ Movie.create!([
     total_gross: 825_025_036,
     director: 'Sam Raimi',
     duration: '121 min',
-    image_file_name: 'spiderman.png',
     slug: 'spider-man'
   },
   {
@@ -154,7 +145,6 @@ Movie.create!([
     total_gross: 411_348_924,
     director: 'Tim Burton',
     duration: '126 min',
-    image_file_name: 'batman.png',
     slug: 'batman'
   },
   {
@@ -168,7 +158,6 @@ Movie.create!([
     total_gross: 82_102_379,
     director: "Jean-Christophe 'Pitof' Comar",
     duration: "101 min",
-    image_file_name: "catwoman.png",
     slug: 'catwoman'
   },
   {
@@ -182,7 +171,6 @@ Movie.create!([
     total_gross: 821_847_012,
     director: "Patty Jenkins",
     duration: "141 min",
-    image_file_name: "wonder-woman.png",
     slug: 'wonder-woman'
   }
 ])
