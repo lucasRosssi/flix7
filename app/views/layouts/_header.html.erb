@@ -23,7 +23,7 @@
     </ul>
     <ul class="right">
       <% if current_user %>
-        <% if params[:controller] == 'users' && params[:id] && Integer(params[:id]) == current_user.id %>
+        <% if params[:controller] == 'users' && params[:id] && params[:id] == current_user.username %>
           <li>
             <%= link_to "Sign Out", session_path, data: { 
               turbo_method: :delete,

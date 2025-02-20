@@ -19,4 +19,8 @@ class User < ApplicationRecord
   def gravatar_id
     Digest::MD5::hexdigest(email.downcase)
   end
+
+  def to_param
+    username
+  end
 end

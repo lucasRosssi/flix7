@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find_by!(username: params[:id])
     @reviews = @user.reviews
     @favorite_movies = @user.favorite_movies
   end
@@ -46,12 +46,12 @@ class UsersController < ApplicationController
   
   private
     def require_correct_user
-      @user = User.find(params[:id])
+      @user = User.find_by!(username: params[:id])
       redirect_to movies_url, status: :see_other unless current_user?(@user)
     end
 
     def require_admin_or_correct_user
-      @user = User.find(params[:id])
+      @user = User.find_by!(username: params[:id])
       unless current_user?(@user) || current_user_admin?
         flash[:warning] = "Unauthorized access."
         redirect_to movies_url, status: :see_other 
