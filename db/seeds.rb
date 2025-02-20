@@ -20,7 +20,8 @@ Movie.create!([
     total_gross: 1_223_641_414,
     director: 'Anthony Russo',
     duration: '181 min',
-    image_file_name: 'avengers-end-game.png'
+    image_file_name: 'avengers-end-game.png',
+    slug: 'avengers-endgame'
   },
   {
     name: 'Captain Marvel',
@@ -33,7 +34,8 @@ Movie.create!([
     total_gross: 1_110_662_849,
     director: 'Anna Boden',
     duration: '124 min',
-    image_file_name: 'captain-marvel.png'
+    image_file_name: 'captain-marvel.png',
+    slug: 'captain-marvel'
   },
   {
     name: 'Black Panther',
@@ -46,7 +48,8 @@ Movie.create!([
     total_gross: 1_346_913_161,
     director: 'Ryan Coogler',
     duration: '134 min',
-    image_file_name: 'black-panther.png'
+    image_file_name: 'black-panther.png',
+    slug: 'black-panther'
   },
   {
     name: 'Avengers: Infinity War',
@@ -59,7 +62,8 @@ Movie.create!([
     total_gross: 2_048_359_754,
     director: 'Anthony Russo',
     duration: '149 min',
-    image_file_name: 'avengers-infinity-war.png'
+    image_file_name: 'avengers-infinity-war.png',
+    slug: 'avengers-infinity-war'
   },
   {
     name: 'Green Lantern',
@@ -72,7 +76,8 @@ Movie.create!([
     total_gross: 219_851_172,
     director: 'Martin Campbell',
     duration: '114 min',
-    image_file_name: 'green-lantern.png'
+    image_file_name: 'green-lantern.png',
+    slug: 'green-lantern'
   },
   {
     name: 'Fantastic Four',
@@ -85,7 +90,8 @@ Movie.create!([
     total_gross: 168_257_860,
     director: 'Josh Trank',
     duration: '100 min',
-    image_file_name: 'fantastic-four.png'
+    image_file_name: 'fantastic-four.png',
+    slug: 'fantastic-four'
   },
   {
     name: 'Iron Man',
@@ -100,7 +106,8 @@ Movie.create!([
     total_gross: 585_366_247,
     director: 'Jon Favreau',
     duration: '126 min',
-    image_file_name: 'ironman.png'
+    image_file_name: 'ironman.png',
+    slug: 'iron-man'
   },
   {
     name: 'Superman',
@@ -115,7 +122,8 @@ Movie.create!([
     total_gross: 300_451_603,
     director: 'Richard Donner',
     duration: '143 min',
-    image_file_name: 'superman.png'
+    image_file_name: 'superman.png',
+    slug: 'superman'
   },
   {
     name: 'Spider-Man',
@@ -131,7 +139,8 @@ Movie.create!([
     total_gross: 825_025_036,
     director: 'Sam Raimi',
     duration: '121 min',
-    image_file_name: 'spiderman.png'
+    image_file_name: 'spiderman.png',
+    slug: 'spider-man'
   },
   {
     name: 'Batman',
@@ -145,7 +154,8 @@ Movie.create!([
     total_gross: 411_348_924,
     director: 'Tim Burton',
     duration: '126 min',
-    image_file_name: 'batman.png'
+    image_file_name: 'batman.png',
+    slug: 'batman'
   },
   {
     name: "Catwoman",
@@ -158,7 +168,8 @@ Movie.create!([
     total_gross: 82_102_379,
     director: "Jean-Christophe 'Pitof' Comar",
     duration: "101 min",
-    image_file_name: "catwoman.png"
+    image_file_name: "catwoman.png",
+    slug: 'catwoman'
   },
   {
     name: "Wonder Woman",
@@ -171,6 +182,7 @@ Movie.create!([
     total_gross: 821_847_012,
     director: "Patty Jenkins",
     duration: "141 min",
-    image_file_name: "wonder-woman.png"
+    image_file_name: "wonder-woman.png",
+    slug: 'wonder-woman'
   }
 ])
